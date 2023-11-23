@@ -7,8 +7,6 @@
             {{ textoBotao }}
         </button>
     </div>
-    <!-- <div>
-    </div> -->
 </template>
 <script>
 
@@ -37,6 +35,18 @@ export default {
 }
 </script>
 <style scoped>
-
+div .container {
+    padding: 1rem;
+    background: #0d3b66;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+@media only screen and (max-width: 768px) {
+    div .container {
+        padding: 2.5rem;
+        height: auto;
+    }
+}
 </style>
 

@@ -5,18 +5,30 @@
         <side-bar @aoTemaAlterado="trocarTema"></side-bar>
       </div>
       <div class="col-8 px-0 conteudo">
-        
+        <form-component @aoSalvarTarefa="saveTask"></form-component>
+        <div class="list">
+          <task-box v-if="isEmptyList">
+            Você não adicionou nenhuma tarefa
+          </task-box>
+          <assignment-task v-for="(task, index) in tasks" :key="index" :task="task"></assignment-task>
+        </div>
       </div>
     </div>
   </main>
 </template>
 <script>
 import SideBar from './SideBar.vue';
+import FormComponent from "./FormComponent.vue";
+import TaskBox from './TaskBox.vue';
+import AssignmentTask from "./AssignmentTask.vue";
 
 export default {
   name: 'TaskManager',
   components: {
-    SideBar
+    SideBar,
+    FormComponent,
+    TaskBox,
+    AssignmentTask
   },
   data() {
     return {
@@ -40,7 +52,9 @@ export default {
 }
 </script>
 <style scoped>
-
+* {
+  border: 1px solid black;
+}
 .list{
   padding: 1.25rem;
 }
