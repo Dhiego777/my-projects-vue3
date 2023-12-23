@@ -1,10 +1,10 @@
 <template>
-    <task-box>
-        <div class="columns">
-            <div class="column is-7">
+    <task-box class="my-3 rounded-borders shadow-sm">
+        <div class="row p-3">
+            <div class="col">
                 {{ task.description || 'Tarefa sem descrição'}}
             </div>
-            <div class="column">
+            <div class="col">
                 <ProgressiveClock :timeInSeconds="task.durationInSeconds"></ProgressiveClock>
             </div>
         </div>
@@ -28,3 +28,9 @@ export default {
     }
 }
 </script>
+
+<style>
+    .rounded-borders {
+        border-radius: 7px;
+    }
+</style>

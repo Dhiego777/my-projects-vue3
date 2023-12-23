@@ -36,9 +36,7 @@ export default {
 </script>
 <style scoped>
 div .container {
-    padding: 1rem;
     background: #0d3b66;
-    width: 100%;
     height: 100vh;
     text-align: center;
 }

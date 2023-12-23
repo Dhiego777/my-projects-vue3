@@ -1,13 +1,13 @@
 <template>
   <main :class="{ 'modo-escuro': modoEscuro }">
     <div class="row">
-      <div class="col-4 px-0">
+      <div class="col-2 px-0">
         <side-bar @aoTemaAlterado="trocarTema"></side-bar>
       </div>
-      <div class="col-8 px-0 conteudo">
-        <form-component @aoSalvarTarefa="saveTask"></form-component>
-        <div class="list">
-          <task-box v-if="isEmptyList">
+      <div class="col-10 px-0 conteudo">
+        <form-component class="py-1" @aoSalvarTarefa="saveTask"></form-component>
+        <div class="px-3">
+          <task-box class="my-3 p-3 rounded-borders shadow-sm" v-if="isEmptyList">
             Você não adicionou nenhuma tarefa
           </task-box>
           <assignment-task v-for="(task, index) in tasks" :key="index" :task="task"></assignment-task>
@@ -52,12 +52,8 @@ export default {
 }
 </script>
 <style scoped>
-* {
-  border: 1px solid black;
-}
-.list{
-  padding: 1.25rem;
-}
+
+
 
 main {
   --bg-primario:#fff;
